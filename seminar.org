@@ -616,6 +616,8 @@ spectrogram(y,5000,400,24000,24000,'yaxis');
  - some of the coeffients are cut off by threshold
  - there is somany methi=od for thresholding like minimax method
  - The detailed coeffients are considers as noise that why processing is only done to it only
+** Picture
+[[./den.png]]
 * Demo
  - Use waveletanalyser in matlab
 * Conclusion
