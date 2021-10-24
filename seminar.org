@@ -1,3 +1,13 @@
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
+* Abstraction
+In present days, wavelet transform are useful for analysis of signal
+decomposition and reconstruction. Wavelet transform allow us to analyse in
+both time and frequency. In Fourier transform, you only have one
+information frequency or time, we did not know when a certain frequency
+occurred. This disadvantage is solved by wavelet transform, it is a powerful
+tool to analyse audio and image signals. Wavelet transform are used to
+compress signal and filtering of image.
 * What is space?
  - When we think of space we think about space where we live but in mathematics it more then that 
    In mathamatics any generic abstract collection of elements are called space
@@ -560,8 +570,57 @@ spectrogram(y,5000,400,24000,24000,'yaxis');
    - Use wavemenu in matlab  
 ** CWT 
   [[./cwt.gif]]
+** CWT plot
+[[./cwtc.png]]
 ** DWT
    - CWT give continous collections of coeficient which can't be store in computers so we use DWT
    - Descritized version of CWT
    - it used to denoice signals
    - Here we chose "a" and "b" to descrete value
+** DWT
+   - if we choose "a" and "b" to be power of two then it is called multiresalution analysis
+- a = 2^m and b = n2^m   
+- Then the wavelets becomes
+   - \[ \psi_{mn}(k) = 2^{\frac{-m}{2}} \psi (2^{-m}k - n) \]
+** DWT 
+ - Then the DWT become
+ - \[ 2^{\frac{-m}{2}} \sum_{k=-\infty}^{\infty} f(k) \psi^* (2^{-m}k - n) \]
+** DWT
+[[./dwtc.png]]
+** Filter Bank theory
+*** DWT
+ - Here the signal is passed to both low pass and highpass filters then it downsampled by 2
+ - We have 500 coefficient 
+ - The filters are specialy designed so that it give dwt coefficent after passing through it
+ - This helps us to calculate dwt coeffitiant very fast 
+ - also it split signals it to high frquency signals the outp put of highpass filter called detailed coefficent
+ - The out put of low pass filter called approximation coefficient
+ - This also usefull for denoising 
+*** DWT
+     [[./dwt.png]]
+*** IDWT
+ - The inverse of DWT can calculate by upsampling by 2 then passing through detialed coefficient into highpass filter and approximation coefficint into low pass filter then add then we get the original signal
+*** IDWT
+     [[./idwt.png]]
+*** Denoising a signals
+    - The approximate coeffiient contain the low frequency contents so we can think it has filtered signal
+[[./denoising signals.png]]
+* Uses of wavelet transform
+ - Used in image compression (jpeg 2000)
+ - image denoising
+ - Edge detaction
+ - image enhancement
+ - image fusion
+* How to denoise signal using wavelets
+ - To denoise a signals all detailed coeffients are passed to and shrinked
+ - some of the coeffients are cut off by threshold
+ - there is somany methi=od for thresholding like minimax method
+ - The detailed coeffients are considers as noise that why processing is only done to it only
+* Demo
+ - Use waveletanalyser in matlab
+* Conclusion
+ - The wavelet transform are very useful and powerful to analyse the signals
+ - it can detact discontinuety and it is best choise for function which has jumps
+ - It tells both frequency and time so it is ideal choice for audio processing
+ - Wavelets are used in compression and Denoising images as well as audio
+ 
