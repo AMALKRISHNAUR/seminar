@@ -1,0 +1,19 @@
+* Matlab command
+** Save filename
+   save variable in mat file
+** clear
+   clear all variable
+** clc
+   clear window
+** format type
+   formate all variable to this type after entering this command
+** linspace
+   create a equaly spaced n elements n is argument
+** :
+   used to create raw vectors
+** transpose
+   use ' this for transpose of a vector and matrix
+** hold on
+   plot different plot in same graph
+** hold off
+   use to turn off the hold on mode

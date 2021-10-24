@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(Amalkrishnaur)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="author">Amalkrishnaur</h2><p class="date">Created: 2021-10-24 Sun 17:54</p>
+</section>
+<section id="table-of-contents"><div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgbaf5fe4">1. What is space?</a></li>
+<li><a href="#/slide-orge2b6440">2. Function Space</a>
+<ul>
+<li><a href="#/slide-org62ddc53">2.1. Hilbert space</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org7f24714">3. Vectors</a>
+<ul>
+<li><a href="#/slide-org2b323b2">3.1. Vectors</a></li>
+<li><a href="#/slide-orged50e7f">3.2. Component reprasentation</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgc5786e0">4. cordinate transformation</a>
+<ul>
+<li><a href="#/slide-org00283cd">4.1. cordinate transformation</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgb09b288">5. Inner product of functions</a>
+<ul>
+<li><a href="#/slide-org804af27">5.1. Inner product continue</a></li>
+<li><a href="#/slide-orgea6a01b">5.2. Inner product continue</a></li>
+<li><a href="#/slide-orgd7776b2">5.3. Innerproduct</a></li>
+<li><a href="#/slide-org548f84f">5.4. Inner product matlab</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org9a7fb22">6. Orthogonal Functions</a>
+<ul>
+<li><a href="#/slide-org9332e67">6.1. Orthogonal Functions continue</a></li>
+<li><a href="#/slide-org2a239d8">6.2. Why Importent</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgdf84e42">7. Fourier Series</a>
+<ul>
+<li><a href="#/slide-org62fe70d">7.1. Fourier Series</a></li>
+<li><a href="#/slide-org8180997">7.2. FS continue</a></li>
+<li><a href="#/slide-org4d58125">7.3. Fs</a></li>
+<li><a href="#/slide-org9deb96b">7.4. Complex Fourier Series</a></li>
+<li><a href="#/slide-org8687703">7.5. Reprasentation</a></li>
+<li><a href="#/slide-org7f78ac3">7.6. Example</a></li>
+<li><a href="#/slide-org1b6a9ce">7.7. Matlab</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgfc69d8a">8. Fourier Transform</a>
+<ul>
+<li><a href="#/slide-org4382e8f">8.1. FT</a></li>
+<li><a href="#/slide-org6572b4f">8.2. Work in progress</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org4b52faf">9. Descrete Fourier Transform</a>
+<ul>
+<li><a href="#/slide-org3d7651d">9.1. DFT</a></li>
+<li><a href="#/slide-orgb23d42b">9.2. Inverse DFT</a></li>
+<li><a href="#/slide-orgeec7917">9.3. DFT</a></li>
+<li><a href="#/slide-orgd695d31">9.4. Matrics form</a></li>
+<li><a href="#/slide-org6407eea">9.5. Beauty of matrices</a></li>
+<li><a href="#/slide-org3b50d3d">9.6. Matlab code for DFT matrix</a></li>
+<li><a href="#/slide-org58ade31">9.7. Matlab Gibbs phenomena</a></li>
+<li><a href="#/slide-org583be66">9.8. Work in progres</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org5f2052f">10. FFT</a>
+<ul>
+<li><a href="#/slide-org5bc0b9e">10.1. </a></li>
+</ul>
+</li>
+<li><a href="#/slide-orge561d32">11. Gabor Transform</a>
+<ul>
+<li><a href="#/slide-orgb1e9f05">11.1. Limitations of Fourier transform</a></li>
+<li><a href="#/slide-orgbcb54f1">11.2. Gabor transform</a></li>
+<li><a href="#/slide-org0a150b7">11.3. Gabor transform</a></li>
+<li><a href="#/slide-org81cb2cf">11.4. picture</a></li>
+<li><a href="#/slide-org13401f5">11.5. Problems of gabor transform</a></li>
+<li><a href="#/slide-org1232814">11.6. matlab code for spectrogram</a></li>
+<li><a href="#/slide-orge8459c2">11.7. beethoven code matlab</a></li>
+<li><a href="#/slide-org510e07a">11.8. Idea</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org5aad68a">12. Wavelet Transform</a>
+<ul>
+<li><a href="#/slide-orge242caf">12.1. Wavelet</a></li>
+<li><a href="#/slide-org2e816b6">12.2. Haar Wavelet</a></li>
+<li><a href="#/slide-org8e5ddff">12.3. Mother Wavelet</a></li>
+<li><a href="#/slide-org399b21a">12.4. Properties of wavelets</a>
+<ul>
+<li><a href="#/slide-org3a1097d">12.4.1. Scaling</a></li>
+<li><a href="#/slide-org5d1dd7e">12.4.2. Translation</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org8576e6f">12.5. CWT</a></li>
+<li><a href="#/slide-org78f189f">12.6. CWT</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-orgbaf5fe4">
+<h2 id="orgbaf5fe4"><span class="section-number-2">1</span> What is space?</h2>
+<ul>
+<li>When we think of space we think about space where we live but in mathematics it more then that 
+In mathamatics any generic abstract collection of elements are called space</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orge2b6440">
+<h2 id="orge2b6440"><span class="section-number-2">2</span> Function Space</h2>
+<ul>
+<li>Space of all possible function F(x)</li>
+<li>Idea is come from linear algebra</li>
+<li>It is like vector space with infinit dimenstions</li>
+
+</ul>
+</section>
+<section id="slide-org62ddc53">
+<h3 id="org62ddc53"><span class="section-number-3">2.1</span> Hilbert space</h3>
+<p>
+Space all possible wave functions
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org7f24714">
+<h2 id="org7f24714"><span class="section-number-2">3</span> Vectors</h2>
+
+<div id="orga7369b4" class="figure">
+<p><img src="./2d-vector-grapher-8.png" alt="2d-vector-grapher-8.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>This is Vector</p>
+</div>
+<ul>
+<li>It has both dirction and magnitude</li>
+
+</ul>
+</section>
+<section id="slide-org2b323b2">
+<h3 id="org2b323b2"><span class="section-number-3">3.1</span> Vectors</h3>
+
+<div class="figure">
+<p><img src="./vect.jpg" alt="vect.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-orged50e7f">
+<h3 id="orged50e7f"><span class="section-number-3">3.2</span> Component reprasentation</h3>
+<ul>
+<li>\(\vec a\) = x\(\hat i\) + y\(\hat j\) + z \(\hat k\)</li>
+<li>Also i can write this way</li>
+<li>\(\vec a\) = \(\frac{\vec a . \hat i}{||\hat i||^2}\) + \(\frac{\vec a . \hat j}{||\hat j||^2}\) + \(\frac{\vec a . \hat k}{||\hat k||^2}\)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgc5786e0">
+<h2 id="orgc5786e0"><span class="section-number-2">4</span> cordinate transformation</h2>
+
+<div class="figure">
+<p><img src="./ct.png" alt="ct.png" />
+</p>
+</div>
+</section>
+<section id="slide-org00283cd">
+<h3 id="org00283cd"><span class="section-number-3">4.1</span> cordinate transformation</h3>
+<ul>
+<li>I can write p interms of x and y</li>
+<li>\(\vec p\) = \(\frac{\vec p . x}{||x||^2}\) + \(\frac{\vec p . y }{||y||^2}\)</li>
+<li>I can alse write in terms of x' and y'</li>
+<li>\(\vec p\) = \(\frac{\vec p . x'}{||x'||^2}\) + \(\frac{\vec p . y' }{||y'||^2}\)</li>
+<li>here dot product give projection on to each axis and tell how much that vector in point in x dirction</li>
+<li>Also when dot product is zero the vectors are in orthogonal to each other</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgb09b288">
+<h2 id="orgb09b288"><span class="section-number-2">5</span> Inner product of functions</h2>
+<ul>
+<li>It is just like dot product between two vectors</li>
+<li>A function can be thought as vector of infinit dimenstion</li>
+<li>For defining innerproduct just descritize our functions f and g in some intervel a and b</li>
+<li>We have \(\begin{bmatrix}f_1 & f_2 & \ldots & f_n \end{bmatrix}\) and 
+\(\begin{bmatrix}g_1 & g_2 & \ldots & g_n \end{bmatrix}\) Now we can find innerproduct of this it just two vectors</li>
+
+</ul>
+</section>
+<section id="slide-org804af27">
+<h3 id="org804af27"><span class="section-number-3">5.1</span> Inner product continue</h3>
+<ul>
+<li>Now the innerproduct is</li>
+<li>\[\sum_{k=0}^{n-1} f_kg_k\]</li>
+<li>This as one problem when n increses this changes by huge amound so we need to normalize this by \(\Delta\) x</li>
+
+</ul>
+</section>
+<section id="slide-orgea6a01b">
+<h3 id="orgea6a01b"><span class="section-number-3">5.2</span> Inner product continue</h3>
+<ul>
+<li>Now after normalization by \(\Delta\) x the equation become</li>
+<li>\[\sum_{k=0}^{n-1} f_kg_k\Delta x\]</li>
+<li>This is Riemann approximation of inegral</li>
+
+</ul>
+</section>
+<section id="slide-orgd7776b2">
+<h3 id="orgd7776b2"><span class="section-number-3">5.3</span> Innerproduct</h3>
+<ul>
+<li>Now the equation become</li>
+<li>&lt;f(x),g(x)&gt; = \(\int_a^b\) f(x)g(x) dx</li>
+
+</ul>
+</section>
+<section id="slide-org548f84f">
+<h3 id="org548f84f"><span class="section-number-3">5.4</span> Inner product matlab</h3>
+<div class="org-src-container">
+
+<pre  class="src src-octave" ><code trim>clear all<span style="color: #b218b2; font-weight: bold;">,</span> close all<span style="color: #b218b2; font-weight: bold;">,</span> clc
+
+f <span style="color: #b218b2; font-weight: bold;">=</span> [0 0 .1 .2  .25  .2 .25 .3 .35 .43 .45 .5 .55  .5 .4 .425 .45 .425 .4 .35 .3 .25 .225 .2 .1 0 0]<span style="color: #b218b2; font-weight: bold;">;</span>
+g <span style="color: #b218b2; font-weight: bold;">=</span> [0 0 .025 .1  .2  .175 .2 .25 .25 .3 .32 .35 .375  .325 .3 .275 .275 .25 .225 .225 .2 .175 .15 .15 .05 0 0] <span style="color: #b218b2; font-weight: bold;">-</span>0.025<span style="color: #b218b2; font-weight: bold;">;</span>
+
+x <span style="color: #b218b2; font-weight: bold;">=</span> 0.1<span style="color: #b218b2; font-weight: bold;">*</span>(1<span style="color: #b218b2; font-weight: bold;">:</span>length(f))<span style="color: #b218b2; font-weight: bold;">;</span>
+
+xf <span style="color: #b218b2; font-weight: bold;">=</span> (.01<span style="color: #b218b2; font-weight: bold;">:</span>.01<span style="color: #b218b2; font-weight: bold;">:</span>x(end))<span style="color: #b218b2; font-weight: bold;">;</span>
+ff <span style="color: #b218b2; font-weight: bold;">=</span> interp1(x<span style="color: #b218b2; font-weight: bold;">,</span>f<span style="color: #b218b2; font-weight: bold;">,</span>xf<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'cubic'</span>)
+
+gf <span style="color: #b218b2; font-weight: bold;">=</span> interp1(x<span style="color: #b218b2; font-weight: bold;">,</span>g<span style="color: #b218b2; font-weight: bold;">,</span>xf<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'cubic'</span>)
+
+
+plot(xf(20<span style="color: #b218b2; font-weight: bold;">:</span>end<span style="color: #b218b2; font-weight: bold;">-</span>10)<span style="color: #b218b2; font-weight: bold;">,</span>ff(20<span style="color: #b218b2; font-weight: bold;">:</span>end<span style="color: #b218b2; font-weight: bold;">-</span>10)<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'k'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.5)
+hold on
+plot(x(2<span style="color: #b218b2; font-weight: bold;">:</span>end<span style="color: #b218b2; font-weight: bold;">-</span>1)<span style="color: #b218b2; font-weight: bold;">,</span>f(2<span style="color: #b218b2; font-weight: bold;">:</span>end<span style="color: #b218b2; font-weight: bold;">-</span>1)<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'bo'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'MarkerFace'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'b'</span>)
+plot(xf(20<span style="color: #b218b2; font-weight: bold;">:</span>end<span style="color: #b218b2; font-weight: bold;">-</span>10)<span style="color: #b218b2; font-weight: bold;">,</span>gf(20<span style="color: #b218b2; font-weight: bold;">:</span>end<span style="color: #b218b2; font-weight: bold;">-</span>10)<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'k'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.5)
+plot(x(2<span style="color: #b218b2; font-weight: bold;">:</span>end<span style="color: #b218b2; font-weight: bold;">-</span>1)<span style="color: #b218b2; font-weight: bold;">,</span>g(2<span style="color: #b218b2; font-weight: bold;">:</span>end<span style="color: #b218b2; font-weight: bold;">-</span>1)<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'ro'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'MarkerFace'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'r'</span>)
+
+
+xlim([.1 2.7])
+ylim([<span style="color: #b218b2; font-weight: bold;">-</span>.1 .6])
+set(gca<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'XTick'</span><span style="color: #b218b2; font-weight: bold;">,</span>[.2<span style="color: #b218b2; font-weight: bold;">:</span>.1<span style="color: #b218b2; font-weight: bold;">:</span>2.6]<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'XTickLabels'</span><span style="color: #b218b2; font-weight: bold;">,</span>{}<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.2)
+set(gca<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'YTick'</span><span style="color: #b218b2; font-weight: bold;">,</span>[])<span style="color: #b218b2; font-weight: bold;">;</span>
+box off
+
+set(gcf<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'Position'</span><span style="color: #b218b2; font-weight: bold;">,</span>[100 100 550 250])
+
+set(gcf<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'PaperPositionMode'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'auto'</span>)
+print(<span style="color: #ff1f8b;">'-depsc2'</span><span style="color: #b218b2; font-weight: bold;">,</span> <span style="color: #ff1f8b;">'-loose'</span><span style="color: #b218b2; font-weight: bold;">,</span> <span style="color: #ff1f8b;">'../figures/InnerProduct'</span>)<span style="color: #b218b2; font-weight: bold;">;</span>
+
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">%%</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">xc = x;</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">fc = f;</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">n = length(x);</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">fapx = 0*ff;</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">dx = xc(2)-xc(1);</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">L = xc(end)-xc(1);</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">L = 2.5</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">A0 = (1/pi)*sum(fc.*ones(size(xc)))*dx*L;</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">fapx = fapx + A0/2;</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">for k=1:10</span>
+<span style="color: #b2b2b2; font-style: italic;">%     </span><span style="color: #b2b2b2; font-style: italic;">Ak = (1/pi)*sum(fc.*cos(2*pi*k*xc/L))*dx*L;</span>
+<span style="color: #b2b2b2; font-style: italic;">%     </span><span style="color: #b2b2b2; font-style: italic;">Bk = (1/pi)*sum(fc.*sin(2*pi*k*xc/L))*dx*L;</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span>
+<span style="color: #b2b2b2; font-style: italic;">%     </span><span style="color: #b2b2b2; font-style: italic;">fapx = fapx + Ak*cos(2*k*pi*xf/L) + Bk*sin(2*k*pi*xf/L);</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">end</span>
+<span style="color: #b2b2b2; font-style: italic;">%     </span><span style="color: #b2b2b2; font-style: italic;">plot(xf,fapx,'k')</span>
+
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org9a7fb22">
+<h2 id="org9a7fb22"><span class="section-number-2">6</span> Orthogonal Functions</h2>
+<ul>
+<li>In vectors to check orthogonality we do dot product if dot product is zero then the vectors is orthogonal to each other</li>
+<li>\(\vec a.\vec b\) = |a||b|cos(\(\theta\)) = 0</li>
+<li>mean \(\theta\) = 90\(^{\circ}\)</li>
+<li>In functions we can do the same thing</li>
+
+</ul>
+</section>
+<section id="slide-org9332e67">
+<h3 id="org9332e67"><span class="section-number-3">6.1</span> Orthogonal Functions continue</h3>
+<ul>
+<li>In function space if f and g are orthogonal to each other then innerproduct is zero</li>
+<li>\(\int_a^{b}\) f(x)g(x) dx = 0</li>
+
+</ul>
+</section>
+<section id="slide-org2a239d8">
+<h3 id="org2a239d8"><span class="section-number-3">6.2</span> Why Importent</h3>
+<ul>
+<li>In vectorspace we represents vectors in terms of orthogonal basis</li>
+<li>Same can do in Function Space Represent any function interms of orthogonal functions</li>
+<li>One example of this is Fourier Transform</li>
+<li>It reprasent f(x) interms of orthogonal sins and cosins</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgdf84e42">
+<h2 id="orgdf84e42"><span class="section-number-2">7</span> Fourier Series</h2>
+<ul>
+<li>It is a cordinate transformation</li>
+<li>It is made for solving heat equation in 1800s</li>
+<li>It decompose the signal f into sins and cosins</li>
+<li>sins and cosins are form a orthogonal basis for function space</li>
+
+</ul>
+</section>
+<section id="slide-org62fe70d">
+<h3 id="org62fe70d"><span class="section-number-3">7.1</span> Fourier Series</h3>
+<ul>
+<li>Any periodic signals can be reprasent interms of sum of sins and cosins</li>
+<li>\[f(x) = \frac{A_0}{2} + \sum_{k=1}^{\infty} (A_k Cos(kx) + B_k Sin(kx))\]</li>
+
+</ul>
+</section>
+<section id="slide-org8180997">
+<h3 id="org8180997"><span class="section-number-3">7.2</span> FS continue</h3>
+<ul>
+<li>It can be thought as ths</li>
+<li>f(x) = \(\sum_{k=0}^{\infty}\) (&lt;f(x),cos(kx)&gt; \(\frac{cos(kx)}{||cos(kx)||^2}\) + &lt;f(x),sin(kx)&gt; \(\frac{sin(kx)}{||sin(kx)||^2}\))</li>
+
+</ul>
+</section>
+<section id="slide-org4d58125">
+<h3 id="org4d58125"><span class="section-number-3">7.3</span> Fs</h3>
+<ul>
+<li>A<sub>k</sub> = \(\frac{1}{||cos(kx)||^2}\) &lt;f(x),cos(kx)&gt;</li>
+<li>B<sub>k</sub> = \(\frac{1}{||sin(kx)||^2}\) &lt;f(x),sin(kx)&gt;</li>
+<li>||f(x)||<sup>2</sup> = &lt;f(x),f(x)&gt;</li>
+
+</ul>
+
+</section>
+<section id="slide-org9deb96b">
+<h3 id="org9deb96b"><span class="section-number-3">7.4</span> Complex Fourier Series</h3>
+<ul>
+<li>it uses complex exponential to reprasent signal</li>
+<li>Coefficient can be found exactly same as that of fourier series</li>
+<li>project function into each complex exponential basis you get the coefficient c<sub>k</sub></li>
+
+</ul>
+</section>
+<section id="slide-org8687703">
+<h3 id="org8687703"><span class="section-number-3">7.5</span> Reprasentation</h3>
+<ul>
+<li>\[ f(x) =  \sum_{k=-\infty}^{\infty}  C_k e^{j\omega_0 kt}\]</li>
+<li>C<sub>k</sub> = \(\frac{1}{2\pi}\) &lt;f(x),e<sup>jk&omega;<sub>0</sub> t</sup>&gt;</li>
+
+</ul>
+</section>
+<section id="slide-org7f78ac3">
+<h3 id="org7f78ac3"><span class="section-number-3">7.6</span> Example</h3>
+<ul>
+<li>Assume we have a signal f(x) = 3sin(x) + 3cos(x) then it will look like this</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./ggv.png" alt="ggv.png" />
+</p>
+</div>
+</section>
+<section id="slide-org1b6a9ce">
+<h3 id="org1b6a9ce"><span class="section-number-3">7.7</span> Matlab</h3>
+<div class="org-src-container">
+
+<pre  class="src src-octave" ><code trim>clear all<span style="color: #b218b2; font-weight: bold;">,</span> close all<span style="color: #b218b2; font-weight: bold;">,</span> clc
+
+kmax <span style="color: #b218b2; font-weight: bold;">=</span> 7<span style="color: #b218b2; font-weight: bold;">;</span>
+
+dx <span style="color: #b218b2; font-weight: bold;">=</span> 0.001<span style="color: #b218b2; font-weight: bold;">;</span>
+L <span style="color: #b218b2; font-weight: bold;">=</span> pi<span style="color: #b218b2; font-weight: bold;">;</span>
+x <span style="color: #b218b2; font-weight: bold;">=</span> (<span style="color: #b218b2; font-weight: bold;">-</span>1<span style="color: #b218b2; font-weight: bold;">+</span>dx<span style="color: #b218b2; font-weight: bold;">:</span>dx<span style="color: #b218b2; font-weight: bold;">:</span>1)<span style="color: #b218b2; font-weight: bold;">*</span>L<span style="color: #b218b2; font-weight: bold;">;</span>
+f <span style="color: #b218b2; font-weight: bold;">=</span> 0<span style="color: #b218b2; font-weight: bold;">*</span>x<span style="color: #b218b2; font-weight: bold;">;</span>
+n <span style="color: #b218b2; font-weight: bold;">=</span> length(f)<span style="color: #b218b2; font-weight: bold;">;</span>
+nquart <span style="color: #b218b2; font-weight: bold;">=</span> floor(n<span style="color: #b218b2; font-weight: bold;">/</span>4)<span style="color: #b218b2; font-weight: bold;">;</span>
+nhalf <span style="color: #b218b2; font-weight: bold;">=</span> floor(n<span style="color: #b218b2; font-weight: bold;">/</span>2)<span style="color: #b218b2; font-weight: bold;">;</span>
+
+f(nquart<span style="color: #b218b2; font-weight: bold;">:</span>nhalf) <span style="color: #b218b2; font-weight: bold;">=</span> 4<span style="color: #b218b2; font-weight: bold;">*</span>(1<span style="color: #b218b2; font-weight: bold;">:</span>nquart<span style="color: #b218b2; font-weight: bold;">+</span>1)<span style="color: #b218b2; font-weight: bold;">/</span>n<span style="color: #b218b2; font-weight: bold;">;</span>
+f(nhalf<span style="color: #b218b2; font-weight: bold;">+</span>1<span style="color: #b218b2; font-weight: bold;">:</span>3<span style="color: #b218b2; font-weight: bold;">*</span>nquart) <span style="color: #b218b2; font-weight: bold;">=</span> 1<span style="color: #b218b2; font-weight: bold;">-</span>4<span style="color: #b218b2; font-weight: bold;">*</span>(0<span style="color: #b218b2; font-weight: bold;">:</span>nquart<span style="color: #b218b2; font-weight: bold;">-</span>1)<span style="color: #b218b2; font-weight: bold;">/</span>n<span style="color: #b218b2; font-weight: bold;">;</span>
+subplot(3<span style="color: #b218b2; font-weight: bold;">,</span>1<span style="color: #b218b2; font-weight: bold;">,</span>1)
+plot(x<span style="color: #b218b2; font-weight: bold;">,</span>f<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'-'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'Color'</span><span style="color: #b218b2; font-weight: bold;">,</span>[0 0 0]<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.5)
+ylim([<span style="color: #b218b2; font-weight: bold;">-</span>.2 1.5])
+xlim([<span style="color: #b218b2; font-weight: bold;">-</span>1.25<span style="color: #b218b2; font-weight: bold;">*</span>L 1.25<span style="color: #b218b2; font-weight: bold;">*</span>L])
+set(gca<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.2)
+set(gca<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'XTick'</span><span style="color: #b218b2; font-weight: bold;">,</span>[<span style="color: #b218b2; font-weight: bold;">-</span>L 0 L]<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'XTickLabels'</span><span style="color: #b218b2; font-weight: bold;">,</span>{})<span style="color: #b218b2; font-weight: bold;">;</span><span style="color: #b2b2b2; font-style: italic;">%{'-L','0','L','2L'})</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'YTick',[0 1],'YTickLabels',{});</span>
+<span style="color: #b2b2b2; font-style: italic;">box off</span>
+
+<span style="color: #b2b2b2; font-style: italic;">CC = colormap(jet(8));</span>
+<span style="color: #b2b2b2; font-style: italic;">% CCsparse = CC(5:5:end,:);</span>
+<span style="color: #b2b2b2; font-style: italic;">% CCsparse(end+1,:) = CCsparse(1,:);</span>
+<span style="color: #b2b2b2; font-style: italic;">CCsparse = CC(1:3:end,:);</span>
+<span style="color: #b2b2b2; font-style: italic;">%</span>
+<span style="color: #b2b2b2; font-style: italic;">subplot(3,1,2)</span>
+<span style="color: #b2b2b2; font-style: italic;">L = pi;</span>
+<span style="color: #b2b2b2; font-style: italic;">A0 = sum(f.*ones(size(x)))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">plot(x,A0+0*f,'-','Color',CC(1,:)*.8,'LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">fFS = A0/2;</span>
+<span style="color: #b2b2b2; font-style: italic;">for k=1:kmax</span>
+<span style="color: #b2b2b2; font-style: italic;">    A(k) = sum(f.*cos(pi*k*x/L))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">    B(k) = sum(f.*sin(pi*k*x/L))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">    plot(x,A(k)*cos(k*pi*x/L),'-','Color',CC(k,:)*.8,'LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">%     plot(x,B(k)*sin(2*k*pi*x/L),'k-','LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">    fFS = fFS + A(k)*cos(k*pi*x/L) + 0*B(k)*sin(k*pi*x/L);</span>
+<span style="color: #b2b2b2; font-style: italic;">end</span>
+<span style="color: #b2b2b2; font-style: italic;">ylim([-.7 .7])</span>
+<span style="color: #b2b2b2; font-style: italic;">xlim([-1.25*L 1.25*L])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'LineWidth',1.2)</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'XTick',[-L 0 L],'XTickLabels',{});%{'-L','0','L','2L'})</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'YTick',[-.5 0 .5],'YTickLabels',{});</span>
+<span style="color: #b2b2b2; font-style: italic;">box off</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span>
+<span style="color: #b2b2b2; font-style: italic;">subplot(3,1,1)</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">plot(x,fFS,'-','Color',CC(7,:)*.8,'LineWidth',1.2)</span>
+<span style="color: #b2b2b2; font-style: italic;">l1=legend('     ','    ')</span>
+<span style="color: #b2b2b2; font-style: italic;">set(l1,'box','off');</span>
+<span style="color: #b2b2b2; font-style: italic;">l1.FontSize = 16;</span>
+
+
+<span style="color: #b2b2b2; font-style: italic;">subplot(3,1,3)</span>
+<span style="color: #b2b2b2; font-style: italic;">A0 = sum(f.*ones(size(x)))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">plot(x,A0+0*f,'-','Color',CC(1,:),'LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">fFS = A0/2;</span>
+<span style="color: #b2b2b2; font-style: italic;">for k=1:7</span>
+<span style="color: #b2b2b2; font-style: italic;">    Ak = sum(f.*cos(pi*k*x/L))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">    Bk = sum(f.*sin(pi*k*x/L))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">    plot(x,Ak*cos(k*pi*x/L),'-','Color',CC(k,:)*.8,'LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">%     plot(x,Bk*sin(2*k*pi*x/L),'k-','LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">    fFS = fFS + Ak*cos(k*pi*x/L) + 0*Bk*sin(k*pi*x/L);</span>
+<span style="color: #b2b2b2; font-style: italic;">end</span>
+<span style="color: #b2b2b2; font-style: italic;">ylim([-.06 .06])</span>
+<span style="color: #b2b2b2; font-style: italic;">xlim([-1.25*L 1.25*L])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'LineWidth',1.2)</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'XTick',[-L 0 L],'XTickLabels',{});%{'-L','0','L','2L'})</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'YTick',[-.05 0 .05],'YTickLabels',{});</span>
+<span style="color: #b2b2b2; font-style: italic;">box off</span>
+
+<span style="color: #b2b2b2; font-style: italic;">set(gcf,'Position',[100 100 550 400])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gcf,'PaperPositionMode','auto')</span>
+<span style="color: #b2b2b2; font-style: italic;">print('-depsc2', '-loose', '../figures/FourierTransformSines');</span>
+
+<span style="color: #b2b2b2; font-style: italic;">%% Plot amplitudes</span>
+<span style="color: #b2b2b2; font-style: italic;">clear ERR</span>
+<span style="color: #b2b2b2; font-style: italic;">clear A</span>
+<span style="color: #b2b2b2; font-style: italic;">fFS = A0/2;</span>
+<span style="color: #b2b2b2; font-style: italic;">A(1) = A0/2;</span>
+<span style="color: #b2b2b2; font-style: italic;">ERR(1) = norm(f-fFS);</span>
+<span style="color: #b2b2b2; font-style: italic;">kmax = 100;</span>
+<span style="color: #b2b2b2; font-style: italic;">for k=1:kmax</span>
+<span style="color: #b2b2b2; font-style: italic;">    A(k+1) = sum(f.*cos(2*pi*k*x/L))*dx*2/L;</span>
+<span style="color: #b2b2b2; font-style: italic;">    B(k+1) = sum(f.*sin(2*pi*k*x/L))*dx*2/L;</span>
+<span style="color: #b2b2b2; font-style: italic;">%     plot(x,B(k)*sin(2*k*pi*x/L),'k-','LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">    fFS = fFS + A(k+1)*cos(2*k*pi*x/L) + 0*B(k+1)*sin(2*k*pi*x/L);</span>
+<span style="color: #b2b2b2; font-style: italic;">    ERR(k+1) = norm(f-fFS)/norm(f);</span>
+<span style="color: #b2b2b2; font-style: italic;">end</span>
+<span style="color: #b2b2b2; font-style: italic;">thresh = median(ERR)*sqrt(kmax)*4/sqrt(3);</span>
+<span style="color: #b2b2b2; font-style: italic;">r = max(find(ERR&gt;thresh));</span>
+<span style="color: #b2b2b2; font-style: italic;">r = 7;</span>
+<span style="color: #b2b2b2; font-style: italic;">subplot(2,1,1)</span>
+<span style="color: #b2b2b2; font-style: italic;">semilogy(0:1:kmax,A,'k','LineWidth',1.5)</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">semilogy(r,A(r+1),'bo','LineWidth',1.5)</span>
+<span style="color: #b2b2b2; font-style: italic;">xlim([0 kmax])</span>
+<span style="color: #b2b2b2; font-style: italic;">ylim([10^(-7) 1])</span>
+<span style="color: #b2b2b2; font-style: italic;">subplot(2,1,2)</span>
+<span style="color: #b2b2b2; font-style: italic;">semilogy(0:1:kmax,ERR,'k','LineWidth',1.5)</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">semilogy(r,ERR(r+1),'bo','LineWidth',1.5)</span>
+<span style="color: #b2b2b2; font-style: italic;">xlim([0 kmax])</span>
+<span style="color: #b2b2b2; font-style: italic;">ylim([3*10^(-4) 20])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gcf,'Position',[100 100 500 300])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gcf,'PaperPositionMode','auto')</span>
+<span style="color: #b2b2b2; font-style: italic;">% print('-depsc2', '-loose', '../figures/FourierTransformSinesERROR');</span>
+
+
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgfc69d8a">
+<h2 id="orgfc69d8a"><span class="section-number-2">8</span> Fourier Transform</h2>
+<ul>
+<li>Fourier series is for periodic signals</li>
+<li>If signal is not periodic then we can't use fourier series</li>
+<li>Fourier transform is limiting case of fourier series when L \(\to\) \(\infty\)</li>
+
+</ul>
+</section>
+<section id="slide-org4382e8f">
+<h3 id="org4382e8f"><span class="section-number-3">8.1</span> FT</h3>
+<ul>
+<li>\[ f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega)e^{j\omega x} dx \]</li>
+<li>\[ F(\omega) = \int_{-\infty}^{\infty} f(x)e^{-j\omega x} d\omega \]</li>
+
+</ul>
+</section>
+<section id="slide-org6572b4f">
+<h3 id="org6572b4f"><span class="section-number-3">8.2</span> Work in progress</h3>
+</section>
+</section>
+<section>
+<section id="slide-org4b52faf">
+<h2 id="org4b52faf"><span class="section-number-2">9</span> Descrete Fourier Transform</h2>
+<ul>
+<li>In real life the data sould be in measuremnts in some time</li>
+<li>We get time series insted of nice continues function</li>
+<li>So the descrete fourier transform is descritized version of fourier transform</li>
+
+</ul>
+</section>
+<section id="slide-org3d7651d">
+<h3 id="org3d7651d"><span class="section-number-3">9.1</span> DFT</h3>
+<ul>
+<li>In dft the integration become summation</li>
+<li>DFT</li>
+<li>F(k) = \(\sum_{n=0}^{N-1}\) f<sub>n</sub> e<sup>-2&pi; n \(\frac{k}{N}\)</sup></li>
+<li>k &isin; 0 to N-1</li>
+
+</ul>
+</section>
+<section id="slide-orgb23d42b">
+<h3 id="orgb23d42b"><span class="section-number-3">9.2</span> Inverse DFT</h3>
+<ul>
+<li>To come back to time series</li>
+<li>f(n) =\(\frac{1}{N}\) \(\sum_{k=0}^{N-1}\) F<sub>k</sub> e<sup>2&pi; k \(\frac{n}{N}\)</sup></li>
+<li>n &isin; 0 to N-1</li>
+
+</ul>
+</section>
+<section id="slide-orgeec7917">
+<h3 id="orgeec7917"><span class="section-number-3">9.3</span> DFT</h3>
+<ul>
+<li>let &omega;<sub>n</sub> = e<sup>-j\(\frac{2\pi}{N}\)</sup></li>
+<li>Then we can reprasent DFT in matrix form</li>
+
+</ul>
+</section>
+<section id="slide-orgd695d31">
+<h3 id="orgd695d31"><span class="section-number-3">9.4</span> Matrics form</h3>
+<p>
+\[ \begin{pmatrix} F_0\\F_1\\ \vdots \\F_{n-1} \end{pmatrix} = \begin{bmatrix}
+1 & 1 & \ldots & 1 \\
+1 & \omega & \ldots & \omega^{N-1} \\
+\vdots & \vdots & \vdots & \vdots \\
+1 & \omega^{n-1} & \ldots & \omega^{(N-1)^2} 
+\end{bmatrix} \begin{pmatrix} f_0 \\ f_1 \\ \vdots \\ f_{N-1} \end{pmatrix} \]
+</p>
+</section>
+<section id="slide-org6407eea">
+<h3 id="org6407eea"><span class="section-number-3">9.5</span> Beauty of matrices</h3>
+<ul>
+<li>DFT matrix</li>
+<li>\[ \begin{bmatrix} 1 & 1 & \ldots & 1 \\ 1 & \omega & \ldots & \omega^{N-1} \\ \vdots & \vdots & \vdots & \vdots \\ 1 & \omega^{n-1} & \ldots & \omega^{(N-1)^2} \end{bmatrix} \]</li>
+
+</ul>
+</section>
+<section id="slide-org3b50d3d">
+<h3 id="org3b50d3d"><span class="section-number-3">9.6</span> Matlab code for DFT matrix</h3>
+<div class="org-src-container">
+
+<pre  class="src src-octave" ><code trim>clear all<span style="color: #b218b2; font-weight: bold;">,</span> close all<span style="color: #b218b2; font-weight: bold;">,</span> clc
+n <span style="color: #b218b2; font-weight: bold;">=</span> 256<span style="color: #b218b2; font-weight: bold;">;</span>
+w <span style="color: #b218b2; font-weight: bold;">=</span> exp(<span style="color: #b218b2; font-weight: bold;">-</span>i<span style="color: #b218b2; font-weight: bold;">*</span>2<span style="color: #b218b2; font-weight: bold;">*</span>pi<span style="color: #b218b2; font-weight: bold;">/</span>n)<span style="color: #b218b2; font-weight: bold;">;</span>
+
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">Slow</span>
+<span style="color: #00af00;">for</span> i<span style="color: #b218b2; font-weight: bold;">=</span>1<span style="color: #b218b2; font-weight: bold;">:</span>n
+    <span style="color: #00af00;">for</span> j<span style="color: #b218b2; font-weight: bold;">=</span>1<span style="color: #b218b2; font-weight: bold;">:</span>n
+        DFT(i<span style="color: #b218b2; font-weight: bold;">,</span>j) <span style="color: #b218b2; font-weight: bold;">=</span> w<span style="color: #b218b2; font-weight: bold;">^</span>((i<span style="color: #b218b2; font-weight: bold;">-</span>1)<span style="color: #b218b2; font-weight: bold;">*</span>(j<span style="color: #b218b2; font-weight: bold;">-</span>1))<span style="color: #b218b2; font-weight: bold;">;</span>
+    <span style="color: #00af00;">end</span>
+<span style="color: #00af00;">end</span>
+
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">Fast</span>
+[I<span style="color: #b218b2; font-weight: bold;">,</span>J] <span style="color: #b218b2; font-weight: bold;">=</span> meshgrid(1<span style="color: #b218b2; font-weight: bold;">:</span>n<span style="color: #b218b2; font-weight: bold;">,</span>1<span style="color: #b218b2; font-weight: bold;">:</span>n)<span style="color: #b218b2; font-weight: bold;">;</span>
+DFT <span style="color: #b218b2; font-weight: bold;">=</span> w<span style="color: #b218b2; font-weight: bold;">.^</span>((I<span style="color: #b218b2; font-weight: bold;">-</span>1)<span style="color: #b218b2; font-weight: bold;">.*</span>(J<span style="color: #b218b2; font-weight: bold;">-</span>1))<span style="color: #b218b2; font-weight: bold;">;</span>
+imagesc(real(DFT))
+
+</code></pre>
+</div>
+</section>
+<section id="slide-org58ade31">
+<h3 id="org58ade31"><span class="section-number-3">9.7</span> Matlab Gibbs phenomena</h3>
+<div class="org-src-container">
+
+<pre  class="src src-octave" ><code trim>clear all<span style="color: #b218b2; font-weight: bold;">,</span> close all<span style="color: #b218b2; font-weight: bold;">,</span> clc
+
+kmax <span style="color: #b218b2; font-weight: bold;">=</span> 7<span style="color: #b218b2; font-weight: bold;">;</span>
+
+dx <span style="color: #b218b2; font-weight: bold;">=</span> 0.001<span style="color: #b218b2; font-weight: bold;">;</span>
+L <span style="color: #b218b2; font-weight: bold;">=</span> pi<span style="color: #b218b2; font-weight: bold;">;</span>
+x <span style="color: #b218b2; font-weight: bold;">=</span> (<span style="color: #b218b2; font-weight: bold;">-</span>1<span style="color: #b218b2; font-weight: bold;">+</span>dx<span style="color: #b218b2; font-weight: bold;">:</span>dx<span style="color: #b218b2; font-weight: bold;">:</span>1)<span style="color: #b218b2; font-weight: bold;">*</span>L<span style="color: #b218b2; font-weight: bold;">;</span>
+f <span style="color: #b218b2; font-weight: bold;">=</span> 0<span style="color: #b218b2; font-weight: bold;">*</span>x<span style="color: #b218b2; font-weight: bold;">;</span>
+n <span style="color: #b218b2; font-weight: bold;">=</span> length(f)<span style="color: #b218b2; font-weight: bold;">;</span>
+nquart <span style="color: #b218b2; font-weight: bold;">=</span> floor(n<span style="color: #b218b2; font-weight: bold;">/</span>4)<span style="color: #b218b2; font-weight: bold;">;</span>
+nhalf <span style="color: #b218b2; font-weight: bold;">=</span> floor(n<span style="color: #b218b2; font-weight: bold;">/</span>2)<span style="color: #b218b2; font-weight: bold;">;</span>
+
+f(nquart<span style="color: #b218b2; font-weight: bold;">:</span>nhalf) <span style="color: #b218b2; font-weight: bold;">=</span> 4<span style="color: #b218b2; font-weight: bold;">*</span>(1<span style="color: #b218b2; font-weight: bold;">:</span>nquart<span style="color: #b218b2; font-weight: bold;">+</span>1)<span style="color: #b218b2; font-weight: bold;">/</span>n<span style="color: #b218b2; font-weight: bold;">;</span>
+f(nhalf<span style="color: #b218b2; font-weight: bold;">+</span>1<span style="color: #b218b2; font-weight: bold;">:</span>3<span style="color: #b218b2; font-weight: bold;">*</span>nquart) <span style="color: #b218b2; font-weight: bold;">=</span> 1<span style="color: #b218b2; font-weight: bold;">-</span>4<span style="color: #b218b2; font-weight: bold;">*</span>(0<span style="color: #b218b2; font-weight: bold;">:</span>nquart<span style="color: #b218b2; font-weight: bold;">-</span>1)<span style="color: #b218b2; font-weight: bold;">/</span>n<span style="color: #b218b2; font-weight: bold;">;</span>
+subplot(3<span style="color: #b218b2; font-weight: bold;">,</span>1<span style="color: #b218b2; font-weight: bold;">,</span>1)
+plot(x<span style="color: #b218b2; font-weight: bold;">,</span>f<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'-'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'Color'</span><span style="color: #b218b2; font-weight: bold;">,</span>[0 0 0]<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.5)
+ylim([<span style="color: #b218b2; font-weight: bold;">-</span>.2 1.5])
+xlim([<span style="color: #b218b2; font-weight: bold;">-</span>1.25<span style="color: #b218b2; font-weight: bold;">*</span>L 1.25<span style="color: #b218b2; font-weight: bold;">*</span>L])
+set(gca<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.2)
+set(gca<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'XTick'</span><span style="color: #b218b2; font-weight: bold;">,</span>[<span style="color: #b218b2; font-weight: bold;">-</span>L 0 L]<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'XTickLabels'</span><span style="color: #b218b2; font-weight: bold;">,</span>{})<span style="color: #b218b2; font-weight: bold;">;</span><span style="color: #b2b2b2; font-style: italic;">%{'-L','0','L','2L'})</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'YTick',[0 1],'YTickLabels',{});</span>
+<span style="color: #b2b2b2; font-style: italic;">box off</span>
+
+<span style="color: #b2b2b2; font-style: italic;">CC = colormap(jet(8));</span>
+<span style="color: #b2b2b2; font-style: italic;">% CCsparse = CC(5:5:end,:);</span>
+<span style="color: #b2b2b2; font-style: italic;">% CCsparse(end+1,:) = CCsparse(1,:);</span>
+<span style="color: #b2b2b2; font-style: italic;">CCsparse = CC(1:3:end,:);</span>
+<span style="color: #b2b2b2; font-style: italic;">%</span>
+<span style="color: #b2b2b2; font-style: italic;">subplot(3,1,2)</span>
+<span style="color: #b2b2b2; font-style: italic;">L = pi;</span>
+<span style="color: #b2b2b2; font-style: italic;">A0 = sum(f.*ones(size(x)))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">plot(x,A0+0*f,'-','Color',CC(1,:)*.8,'LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">fFS = A0/2;</span>
+<span style="color: #b2b2b2; font-style: italic;">for k=1:kmax</span>
+<span style="color: #b2b2b2; font-style: italic;">    A(k) = sum(f.*cos(pi*k*x/L))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">    B(k) = sum(f.*sin(pi*k*x/L))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">    plot(x,A(k)*cos(k*pi*x/L),'-','Color',CC(k,:)*.8,'LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">%     plot(x,B(k)*sin(2*k*pi*x/L),'k-','LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">    fFS = fFS + A(k)*cos(k*pi*x/L) + 0*B(k)*sin(k*pi*x/L);</span>
+<span style="color: #b2b2b2; font-style: italic;">end</span>
+<span style="color: #b2b2b2; font-style: italic;">ylim([-.7 .7])</span>
+<span style="color: #b2b2b2; font-style: italic;">xlim([-1.25*L 1.25*L])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'LineWidth',1.2)</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'XTick',[-L 0 L],'XTickLabels',{});%{'-L','0','L','2L'})</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'YTick',[-.5 0 .5],'YTickLabels',{});</span>
+<span style="color: #b2b2b2; font-style: italic;">box off</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span>
+<span style="color: #b2b2b2; font-style: italic;">subplot(3,1,1)</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">plot(x,fFS,'-','Color',CC(7,:)*.8,'LineWidth',1.2)</span>
+<span style="color: #b2b2b2; font-style: italic;">l1=legend('     ','    ')</span>
+<span style="color: #b2b2b2; font-style: italic;">set(l1,'box','off');</span>
+<span style="color: #b2b2b2; font-style: italic;">l1.FontSize = 16;</span>
+
+
+<span style="color: #b2b2b2; font-style: italic;">subplot(3,1,3)</span>
+<span style="color: #b2b2b2; font-style: italic;">A0 = sum(f.*ones(size(x)))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">plot(x,A0+0*f,'-','Color',CC(1,:),'LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">fFS = A0/2;</span>
+<span style="color: #b2b2b2; font-style: italic;">for k=1:7</span>
+<span style="color: #b2b2b2; font-style: italic;">    Ak = sum(f.*cos(pi*k*x/L))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">    Bk = sum(f.*sin(pi*k*x/L))*dx;</span>
+<span style="color: #b2b2b2; font-style: italic;">    plot(x,Ak*cos(k*pi*x/L),'-','Color',CC(k,:)*.8,'LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">%     plot(x,Bk*sin(2*k*pi*x/L),'k-','LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">    fFS = fFS + Ak*cos(k*pi*x/L) + 0*Bk*sin(k*pi*x/L);</span>
+<span style="color: #b2b2b2; font-style: italic;">end</span>
+<span style="color: #b2b2b2; font-style: italic;">ylim([-.06 .06])</span>
+<span style="color: #b2b2b2; font-style: italic;">xlim([-1.25*L 1.25*L])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'LineWidth',1.2)</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'XTick',[-L 0 L],'XTickLabels',{});%{'-L','0','L','2L'})</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gca,'YTick',[-.05 0 .05],'YTickLabels',{});</span>
+<span style="color: #b2b2b2; font-style: italic;">box off</span>
+
+<span style="color: #b2b2b2; font-style: italic;">set(gcf,'Position',[100 100 550 400])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gcf,'PaperPositionMode','auto')</span>
+<span style="color: #b2b2b2; font-style: italic;">print('-depsc2', '-loose', '../figures/FourierTransformSines');</span>
+
+<span style="color: #b2b2b2; font-style: italic;">%% Plot amplitudes</span>
+<span style="color: #b2b2b2; font-style: italic;">clear ERR</span>
+<span style="color: #b2b2b2; font-style: italic;">clear A</span>
+<span style="color: #b2b2b2; font-style: italic;">fFS = A0/2;</span>
+<span style="color: #b2b2b2; font-style: italic;">A(1) = A0/2;</span>
+<span style="color: #b2b2b2; font-style: italic;">ERR(1) = norm(f-fFS);</span>
+<span style="color: #b2b2b2; font-style: italic;">kmax = 100;</span>
+<span style="color: #b2b2b2; font-style: italic;">for k=1:kmax</span>
+<span style="color: #b2b2b2; font-style: italic;">    A(k+1) = sum(f.*cos(2*pi*k*x/L))*dx*2/L;</span>
+<span style="color: #b2b2b2; font-style: italic;">    B(k+1) = sum(f.*sin(2*pi*k*x/L))*dx*2/L;</span>
+<span style="color: #b2b2b2; font-style: italic;">%     plot(x,B(k)*sin(2*k*pi*x/L),'k-','LineWidth',1.2);</span>
+<span style="color: #b2b2b2; font-style: italic;">    fFS = fFS + A(k+1)*cos(2*k*pi*x/L) + 0*B(k+1)*sin(2*k*pi*x/L);</span>
+<span style="color: #b2b2b2; font-style: italic;">    ERR(k+1) = norm(f-fFS)/norm(f);</span>
+<span style="color: #b2b2b2; font-style: italic;">end</span>
+<span style="color: #b2b2b2; font-style: italic;">thresh = median(ERR)*sqrt(kmax)*4/sqrt(3);</span>
+<span style="color: #b2b2b2; font-style: italic;">r = max(find(ERR&gt;thresh));</span>
+<span style="color: #b2b2b2; font-style: italic;">r = 7;</span>
+<span style="color: #b2b2b2; font-style: italic;">subplot(2,1,1)</span>
+<span style="color: #b2b2b2; font-style: italic;">semilogy(0:1:kmax,A,'k','LineWidth',1.5)</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">semilogy(r,A(r+1),'bo','LineWidth',1.5)</span>
+<span style="color: #b2b2b2; font-style: italic;">xlim([0 kmax])</span>
+<span style="color: #b2b2b2; font-style: italic;">ylim([10^(-7) 1])</span>
+<span style="color: #b2b2b2; font-style: italic;">subplot(2,1,2)</span>
+<span style="color: #b2b2b2; font-style: italic;">semilogy(0:1:kmax,ERR,'k','LineWidth',1.5)</span>
+<span style="color: #b2b2b2; font-style: italic;">hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">semilogy(r,ERR(r+1),'bo','LineWidth',1.5)</span>
+<span style="color: #b2b2b2; font-style: italic;">xlim([0 kmax])</span>
+<span style="color: #b2b2b2; font-style: italic;">ylim([3*10^(-4) 20])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gcf,'Position',[100 100 500 300])</span>
+<span style="color: #b2b2b2; font-style: italic;">set(gcf,'PaperPositionMode','auto')</span>
+<span style="color: #b2b2b2; font-style: italic;">% print('-depsc2', '-loose', '../figures/FourierTransformSinesERROR');</span>
+
+
+</code></pre>
+</div>
+</section>
+<section id="slide-org583be66">
+<h3 id="org583be66"><span class="section-number-3">9.8</span> Work in progres</h3>
+</section>
+</section>
+<section>
+<section id="slide-org5f2052f">
+<h2 id="org5f2052f"><span class="section-number-2">10</span> FFT</h2>
+<ul>
+<li>FFT is anlgorithm to compute DFT fast and efficiently</li>
+<li>It uses symetry in DFT</li>
+<li>To compute DFT Without FFT it require O(n<sup>2</sup>) but FFT require only O(nlog(n))</li>
+
+</ul>
+</section>
+<section id="slide-org5bc0b9e">
+<h3 id="org5bc0b9e"><span class="section-number-3">10.1</span> </h3>
+</section>
+</section>
+<section>
+<section id="slide-orge561d32">
+<h2 id="orge561d32"><span class="section-number-2">11</span> Gabor Transform</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+</section>
+<section id="slide-orgb1e9f05">
+<h3 id="orgb1e9f05"><span class="section-number-3">11.1</span> Limitations of Fourier transform</h3>
+<ul>
+<li>FT is good for repreasenting smooth signal when there is sudden jump or discontinuity then it is not capture very well Gibbs phenomena</li>
+<li>FT is good for stationary signal</li>
+<li>Stationary means frequency of signal not change with time</li>
+<li>When we compute Fourier Transform we loss all of time information so we can't say when this frequency occured</li>
+<li>non stationary signals example is audio signal which frequency changes with time</li>
+
+</ul>
+
+</section>
+<section id="slide-orgbcb54f1">
+<h3 id="orgbcb54f1"><span class="section-number-3">11.2</span> Gabor transform</h3>
+<ul>
+<li>it solve the problem of FT</li>
+<li>Gabor Transfom allow us to compute spectrogram a time frequency plot</li>
+<li>Also called windowed FT</li>
+<li>We take a window function multiply with the signal and translate the signal to get gabor transform</li>
+
+</ul>
+</section>
+<section id="slide-org0a150b7">
+<h3 id="org0a150b7"><span class="section-number-3">11.3</span> Gabor transform</h3>
+<ul>
+<li>pull out both time and frequency content</li>
+<li>instead of computinf FT of entire signal we devide into several sections and compute FT of each section</li>
+<li>Mathamaticaly we can write</li>
+<li>\[ G(f(t)) = \int_{\infty}^{\infty} f(\tau)e^{-i \omega \tau} g(\tau - t) d \tau \]</li>
+<li>g is the window function it can be gaussian or rectangular</li>
+<li>We can't know what frequency exist at what time instead but we can know what frequency band exist at what time</li>
+
+</ul>
+</section>
+<section id="slide-org81cb2cf">
+<h3 id="org81cb2cf"><span class="section-number-3">11.4</span> picture</h3>
+<ul>
+<li>gabor grid</li>
+<li><img src="./gab.gif" alt="gab.gif" /></li>
+
+</ul>
+</section>
+<section id="slide-org13401f5">
+<h3 id="org13401f5"><span class="section-number-3">11.5</span> Problems of gabor transform</h3>
+<ul>
+<li>Uncertainity principle</li>
+<li>It tells about when when you narrow the window you get better time resalution but you get poor frequency resalution</li>
+<li>when you stretch the window you get better frquency inforation but poor time information</li>
+<li>uncertainity principle tell us</li>
+<li>&Delta; t &Delta; f &ge; \(\frac{1}{4 \pi}\)</li>
+
+</ul>
+</section>
+<section id="slide-org1232814">
+<h3 id="org1232814"><span class="section-number-3">11.6</span> matlab code for spectrogram</h3>
+<div class="org-src-container">
+
+<pre  class="src src-octave" ><code trim>clear all<span style="color: #b218b2; font-weight: bold;">,</span> close all<span style="color: #b218b2; font-weight: bold;">,</span> clc
+
+n <span style="color: #b218b2; font-weight: bold;">=</span> 128<span style="color: #b218b2; font-weight: bold;">;</span>
+L <span style="color: #b218b2; font-weight: bold;">=</span> 30<span style="color: #b218b2; font-weight: bold;">;</span>
+dx <span style="color: #b218b2; font-weight: bold;">=</span> L<span style="color: #b218b2; font-weight: bold;">/</span>(n)<span style="color: #b218b2; font-weight: bold;">;</span>
+x <span style="color: #b218b2; font-weight: bold;">=</span> <span style="color: #b218b2; font-weight: bold;">-</span>L<span style="color: #b218b2; font-weight: bold;">/</span>2<span style="color: #b218b2; font-weight: bold;">:</span>dx<span style="color: #b218b2; font-weight: bold;">:</span>L<span style="color: #b218b2; font-weight: bold;">/</span>2<span style="color: #b218b2; font-weight: bold;">-</span>dx<span style="color: #b218b2; font-weight: bold;">;</span>
+f <span style="color: #b218b2; font-weight: bold;">=</span> cos(x)<span style="color: #b218b2; font-weight: bold;">.*</span>exp(<span style="color: #b218b2; font-weight: bold;">-</span>x<span style="color: #b218b2; font-weight: bold;">.^</span>2<span style="color: #b218b2; font-weight: bold;">/</span>25)<span style="color: #b218b2; font-weight: bold;">;</span>                    <span style="color: #b2b2b2; font-style: italic;">% Function</span>
+df <span style="color: #b218b2; font-weight: bold;">=</span> <span style="color: #b218b2; font-weight: bold;">-</span>(sin(x)<span style="color: #b218b2; font-weight: bold;">.*</span>exp(<span style="color: #b218b2; font-weight: bold;">-</span>x<span style="color: #b218b2; font-weight: bold;">.^</span>2<span style="color: #b218b2; font-weight: bold;">/</span>25) <span style="color: #b218b2; font-weight: bold;">+</span> (2<span style="color: #b218b2; font-weight: bold;">/</span>25)<span style="color: #b218b2; font-weight: bold;">*</span>x<span style="color: #b218b2; font-weight: bold;">.*</span>f)<span style="color: #b218b2; font-weight: bold;">;</span>  <span style="color: #b2b2b2; font-style: italic;">% Derivative</span>
+
+<span style="color: #b2b2b2; font-style: italic;">%% </span><span style="color: #b2b2b2; font-style: italic;">Approximate derivative using finite Difference...</span>
+<span style="color: #00af00;">for</span> kappa<span style="color: #b218b2; font-weight: bold;">=</span>1<span style="color: #b218b2; font-weight: bold;">:</span>length(df)<span style="color: #b218b2; font-weight: bold;">-</span>1
+    dfFD(kappa) <span style="color: #b218b2; font-weight: bold;">=</span> (f(kappa<span style="color: #b218b2; font-weight: bold;">+</span>1)<span style="color: #b218b2; font-weight: bold;">-</span>f(kappa))<span style="color: #b218b2; font-weight: bold;">/</span>dx<span style="color: #b218b2; font-weight: bold;">;</span>
+<span style="color: #00af00;">end</span>
+dfFD(end<span style="color: #b218b2; font-weight: bold;">+</span>1) <span style="color: #b218b2; font-weight: bold;">=</span> dfFD(end)<span style="color: #b218b2; font-weight: bold;">;</span>
+
+<span style="color: #b2b2b2; font-style: italic;">%% </span><span style="color: #b2b2b2; font-style: italic;">Derivative using FFT (spectral derivative)</span>
+fhat <span style="color: #b218b2; font-weight: bold;">=</span> fft(f)<span style="color: #b218b2; font-weight: bold;">;</span>
+kappa <span style="color: #b218b2; font-weight: bold;">=</span> (2<span style="color: #b218b2; font-weight: bold;">*</span>pi<span style="color: #b218b2; font-weight: bold;">/</span>L)<span style="color: #b218b2; font-weight: bold;">*</span>[<span style="color: #b218b2; font-weight: bold;">-</span>n<span style="color: #b218b2; font-weight: bold;">/</span>2<span style="color: #b218b2; font-weight: bold;">:</span>n<span style="color: #b218b2; font-weight: bold;">/</span>2<span style="color: #b218b2; font-weight: bold;">-</span>1]<span style="color: #b218b2; font-weight: bold;">;</span>
+kappa <span style="color: #b218b2; font-weight: bold;">=</span> fftshift(kappa)<span style="color: #b218b2; font-weight: bold;">;</span>  <span style="color: #b2b2b2; font-style: italic;">% Re-order fft frequencies</span>
+dfhat <span style="color: #b218b2; font-weight: bold;">=</span> i<span style="color: #b218b2; font-weight: bold;">*</span>kappa<span style="color: #b218b2; font-weight: bold;">.*</span>fhat<span style="color: #b218b2; font-weight: bold;">;</span>
+dfFFT <span style="color: #b218b2; font-weight: bold;">=</span> real(ifft(dfhat))<span style="color: #b218b2; font-weight: bold;">;</span>
+
+<span style="color: #b2b2b2; font-style: italic;">%% </span><span style="color: #b2b2b2; font-style: italic;">Plotting commands</span>
+plot(x<span style="color: #b218b2; font-weight: bold;">,</span>df<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'k'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.5)<span style="color: #b218b2; font-weight: bold;">,</span> hold on
+plot(x<span style="color: #b218b2; font-weight: bold;">,</span>dfFD<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'b--'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.2)
+plot(x<span style="color: #b218b2; font-weight: bold;">,</span>dfFFT<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'r--'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'LineWidth'</span><span style="color: #b218b2; font-weight: bold;">,</span>1.2)
+legend(<span style="color: #ff1f8b;">'True Derivative'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'Finite Diff.'</span><span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'FFT Derivative'</span>)
+
+</code></pre>
+</div>
+</section>
+<section id="slide-orge8459c2">
+<h3 id="orge8459c2"><span class="section-number-3">11.7</span> beethoven code matlab</h3>
+<div class="org-src-container">
+
+<pre  class="src src-octave" ><code trim>clear all<span style="color: #b218b2; font-weight: bold;">,</span> close all<span style="color: #b218b2; font-weight: bold;">,</span> clc
+
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">If you download mp3read, you can use this code</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">also, need to download mp3read from </span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">http://www.mathworks.com/matlabcentral/fileexchange/13852-mp3read-and-mp3write</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">[Y,FS,NBITS,OPTS] = mp3read('../../DATA/beethoven.mp3'); % add in your own song</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">T = 40;            % 40 seconds</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">y=Y(1:T*FS);       % First 40 seconds</span>
+load .<span style="color: #b218b2; font-weight: bold;">./</span>.<span style="color: #b218b2; font-weight: bold;">./</span>DATA<span style="color: #b218b2; font-weight: bold;">/</span>beethoven_40sec.mat 
+<span style="color: #b2b2b2; font-style: italic;">%% </span><span style="color: #b2b2b2; font-style: italic;">Spectrogram</span>
+spectrogram(y<span style="color: #b218b2; font-weight: bold;">,</span>5000<span style="color: #b218b2; font-weight: bold;">,</span>400<span style="color: #b218b2; font-weight: bold;">,</span>24000<span style="color: #b218b2; font-weight: bold;">,</span>24000<span style="color: #b218b2; font-weight: bold;">,</span><span style="color: #ff1f8b;">'yaxis'</span>)<span style="color: #b218b2; font-weight: bold;">;</span>
+
+<span style="color: #b2b2b2; font-style: italic;">%% </span><span style="color: #b2b2b2; font-style: italic;">SPECTROGRAM </span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">uncomment remaining code and download stft code by M.Sc. Eng. Hristo Zhivomirov</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">wlen = 5000;</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">h=400;        % Overlap is wlen - h</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">% perform time-frequency analysis and resynthesis of the original signal</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">[S, f, t_stft] = stft(y, wlen, h, FS/4, FS);  % y axis range goes up to 4000 HZ</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">imagesc(log10(abs(S)));</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">load CC.mat</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">colormap(ones(size(CC))-(CC))</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">axis xy, hold on</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">XTicks = [1 300 600 900 1200 1500 1800 2100];</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">XTickLabels = {'0','5','10','15','20','25','30','35'};</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">YTicks = [0 1000 2000 3000];</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">YTickLabels = {'0','4000','8000','12000'};</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">set(gca,'XTick',XTicks,'XTickLabels',XTickLabels);</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">set(gca,'YTick',YTicks,'YTickLabels',YTickLabels);</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">% plot a frequency</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">freq = @(n)(((2^(1/12))^(n-49))*440);</span>
+<span style="color: #b2b2b2; font-style: italic;">% </span><span style="color: #b2b2b2; font-style: italic;">freq(40) % frequency of 40th key = C</span>
+
+</code></pre>
+</div>
+</section>
+<section id="slide-org510e07a">
+<h3 id="org510e07a"><span class="section-number-3">11.8</span> Idea</h3>
+
+<div class="figure">
+<p><img src="./gabor.png" alt="gabor.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org5aad68a">
+<h2 id="org5aad68a"><span class="section-number-2">12</span> Wavelet Transform</h2>
+<ul>
+<li>supercharged Fourier transform</li>
+<li>Generalize Fourier transform</li>
+<li>Reprasent signals interms of other orthogonal functions</li>
+
+</ul>
+</section>
+<section id="slide-orge242caf">
+<h3 id="orge242caf"><span class="section-number-3">12.1</span> Wavelet</h3>
+<ul>
+<li>Wavelets are new basis functions also act as window function</li>
+<li>Wavelets are some wave like oscilationg functions in limited durations</li>
+<li>There are somany wavelets are avialable</li>
+<li>Wavelets are lmited duration so we need to translate it</li>
+
+</ul>
+</section>
+<section id="slide-org2e816b6">
+<h3 id="org2e816b6"><span class="section-number-3">12.2</span> Haar Wavelet</h3>
+
+<div class="figure">
+<p><img src="./Haar.png" alt="Haar.png" />
+</p>
+</div>
+</section>
+<section id="slide-org8e5ddff">
+<h3 id="org8e5ddff"><span class="section-number-3">12.3</span> Mother Wavelet</h3>
+<ul>
+<li>It is a function which acts as basis for creating orthogonal functios</li>
+<li>Example if &psi; (a,b) is mother wavelets then we can create orthogonal wavelets by scaling</li>
+<li>Since wavelets are localized we need to translate it</li>
+
+</ul>
+
+</section>
+<section id="slide-org399b21a">
+<h3 id="org399b21a"><span class="section-number-3">12.4</span> Properties of wavelets</h3>
+<div class="outline-text-3" id="text-12-4">
+</div>
+</section>
+<section id="slide-org3a1097d">
+<h4 id="org3a1097d"><span class="section-number-4">12.4.1</span> Scaling</h4>
+<ul>
+<li>it  compress or sretch wavelets</li>
+<li>Scaling factor "a" is inversly proportional to frequency</li>
+<li>Small "a" Wavelets capture high frequency</li>
+<li>orthogonal wavelets are \(\frac{1}{2 \sqrt[2] a}\) &psi;(\(\frac{t}{a}\))</li>
+
+</ul>
+</section>
+<section id="slide-org5d1dd7e">
+<h4 id="org5d1dd7e"><span class="section-number-4">12.4.2</span> Translation</h4>
+<ul>
+<li>Since wavelets are localized we translate it with "b"</li>
+<li>So "b" moves the wavelets left or right</li>
+<li>Now the wavelets become \(\frac{1}{2 \sqrt[2] a}\) &psi; (\(\frac{t-b}{a}\))  This are orthogonal to each other</li>
+<li>You can prove this by innerproduct</li>
+
+</ul>
+</section>
+<section id="slide-org8576e6f">
+<h3 id="org8576e6f"><span class="section-number-3">12.5</span> CWT</h3>
+<ul>
+<li>Now we have basis function to calculate coefficient only we need to project the function into basis</li>
+<li>So mathamatically continues wavelet transform become</li>
+<li>\[ W(a,b) = \frac{1}{2 \sqrt[2] a} \int_{-\infty}^{\infty} f(t)  \psi^* (\frac{t-b}{a}) \]</li>
+<li>Use wavemenu in matlab</li>
+
+</ul>
+</section>
+<section id="slide-org78f189f">
+<h3 id="org78f189f"><span class="section-number-3">12.6</span> CWT</h3>
+
+<div class="figure">
+<p><img src="./cwt.gif" alt="cwt.gif" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+
+
+</script>
+</body>
+</html>
