@@ -1,6 +1,6 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
-* Abstraction
+* Abstract
 In present days, wavelet transform are useful for analysis of signal
 decomposition and reconstruction. Wavelet transform allow us to analyse in
 both time and frequency. In Fourier transform, you only have one
@@ -454,7 +454,7 @@ set(gcf,'PaperPositionMode','auto')
  - pull out both time and frequency content
  - instead of computinf FT of entire signal we devide into several sections and compute FT of each section
  - Mathamaticaly we can write
- - \[ G(f(t)) = \int_{\infty}^{\infty} f(\tau)e^{-i \omega \tau} g(\tau - t) d \tau \]
+ - \[ G(f(t)) = \int_{-\infty}^{\infty} f(\tau)e^{-i \omega \tau} g(\tau - t) d \tau \]
  - g is the window function it can be gaussian or rectangular
  - We can't know what frequency exist at what time instead but we can know what frequency band exist at what time 
 ** picture
@@ -572,6 +572,11 @@ spectrogram(y,5000,400,24000,24000,'yaxis');
   [[./cwt.gif]]
 ** CWT plot
 [[./cwtc.png]]
+** IWFT
+ - Inverse fouriuer transform is given by
+ - \[ f(t) = \frac{1}{C_{\psi}}  \int_{a} \int_{b} W(a,b) \psi_{ab} (t) db \frac{da}{a^2} \]
+** Continue
+ - \[ C_{\psi} = \int_{-\infty}^{\infty} \frac{|\psi(\omega)|^2}{|\omega|} d \omega \]
 ** DWT
    - CWT give continous collections of coeficient which can't be store in computers so we use DWT
    - Descritized version of CWT
@@ -602,6 +607,8 @@ spectrogram(y,5000,400,24000,24000,'yaxis');
  - The inverse of DWT can calculate by upsampling by 2 then passing through detialed coefficient into highpass filter and approximation coefficint into low pass filter then add then we get the original signal
 *** IDWT
      [[./idwt.png]]
+*** Multiple decomposition
+[[./mb2.png]]
 *** Denoising a signals
     - The approximate coeffiient contain the low frequency contents so we can think it has filtered signal
 [[./denoising signals.png]]
